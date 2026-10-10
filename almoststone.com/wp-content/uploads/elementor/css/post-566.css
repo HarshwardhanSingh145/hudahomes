@@ -1,0 +1,76 @@
+.elementor-kit-566 {
+  --e-global-color-primary: #141414;
+  --e-global-color-secondary: #54595f;
+  --e-global-color-text: #7a7a7a;
+  --e-global-color-accent: #61ce70;
+  --e-global-color-6ae97ba: #757575;
+  --e-global-color-883aba4: #ffffff;
+  --e-global-color-3605f91: #141414;
+  --e-global-color-f77cbb5: #ffffff;
+  --e-global-color-6249814: #141414;
+  --e-global-color-ace8507: #f0baee;
+  --e-global-color-9bf3aca: #f0eaf0;
+  --e-global-color-04ba746: #141414;
+  --e-global-color-959dca1: #343434;
+  --e-global-color-e8cb70f: #ffffff;
+  --e-global-color-0cc3ace: #ffffffbf;
+  --e-global-color-82a530c: #141414;
+  --e-global-color-8dac040: #343434;
+  --e-global-color-ae1f294: #ffffff;
+  --e-global-color-92dab16: #ffffff;
+  --e-global-color-35ca5e1: #141414;
+  --e-global-color-503a9fe: #343434;
+  --e-global-color-9489a28: #d8d8d8;
+  --e-global-typography-primary-font-weight: 600;
+  --e-global-typography-secondary-font-weight: 400;
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-accent-font-weight: 500;
+  --body-color: var(--e-global-color-primary);
+  --link-color: var(--e-global-color-primary);
+}
+.elementor-kit-566 h1 {
+  color: var(--e-global-color-3605f91);
+  font-size: 46px;
+  font-weight: 700;
+}
+.elementor-kit-566 h2 {
+  color: var(--e-global-color-3605f91);
+}
+.elementor-kit-566 h3 {
+  color: var(--e-global-color-3605f91);
+}
+.elementor-kit-566 h4 {
+  color: var(--e-global-color-3605f91);
+}
+.elementor-kit-566 h5 {
+  color: var(--e-global-color-3605f91);
+}
+.elementor-kit-566 h6 {
+  color: var(--e-global-color-3605f91);
+}
+.e-con {
+  --container-max-width-x: 1140px;
+}
+.elementor-widget:not(:last-child) {
+  --kit-widget-spacing: 20px;
+}
+.elementor-element {
+  --widgets-spacing: 20px 20px;
+  --widgets-spacing-row: 20px;
+  --widgets-spacing-column: 20px;
+}
+ {
+}
+h1.entry-title {
+  display: var(--page-title-display);
+}
+@media (max-width: 1024px) {
+  .e-con {
+    --container-max-width-x: 1024px;
+  }
+}
+@media (max-width: 767px) {
+  .e-con {
+    --container-max-width-x: 767px;
+  }
+}

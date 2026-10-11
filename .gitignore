@@ -1,3 +1,9 @@
 .DS_Store
 *.log
 Thumbs.db
+
+# Test & Debug Screenshots
+/desktop_*.png
+/mobile_*.png
+/product_details_desktop.png
+/test_shot_*.png

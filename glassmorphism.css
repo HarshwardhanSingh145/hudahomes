@@ -1,0 +1,1399 @@
+/* ==========================================================================
+   HUDA HOMES - ATELIER OBSIDIAN & FROSTED QUARTZ GLASSMORPHISM MASTERPIECE
+   Ultra-Luxury Living Heritage Real Estate & Architectural Stone Aesthetic
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Core Glass Tokens */
+  --hh-glass-bg: rgba(16, 21, 31, 0.72);
+  --hh-glass-bg-subtle: rgba(255, 255, 255, 0.035);
+  --hh-glass-bg-card: rgba(20, 26, 40, 0.65);
+  --hh-glass-bg-elevated: rgba(24, 32, 50, 0.85);
+  --hh-glass-bg-pill: rgba(14, 18, 27, 0.88);
+  
+  /* Luminous Borders */
+  --hh-glass-border: 1px solid rgba(255, 255, 255, 0.12);
+  --hh-glass-border-light: 1px solid rgba(255, 255, 255, 0.22);
+  --hh-glass-border-gold: 1px solid rgba(212, 175, 55, 0.38);
+  --hh-glass-border-gold-glow: 1px solid rgba(212, 175, 55, 0.75);
+
+  /* Frosting Blurs */
+  --hh-blur-sm: blur(12px) saturate(160%);
+  --hh-blur-md: blur(22px) saturate(180%);
+  --hh-blur-lg: blur(34px) saturate(200%);
+
+  /* Ambient & Gold Accents */
+  --hh-gold: #d4af37;
+  --hh-gold-light: #fbeea8;
+  --hh-gold-glow: rgba(212, 175, 55, 0.28);
+  --hh-gold-gradient: linear-gradient(135deg, #fff7d6 0%, #d4af37 50%, #9e7d1d 100%);
+  --hh-text-primary: #f8fafc;
+  --hh-text-secondary: #94a3b8;
+  --hh-text-muted: #64748b;
+  --hh-canvas-dark: #090c12;
+
+  /* Layered Shadows */
+  --hh-glass-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+  --hh-glass-shadow-hover: 0 30px 65px -10px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 175, 55, 0.2), inset 0 1px 2px 0 rgba(255, 255, 255, 0.3);
+  --hh-glass-shadow-deep: 0 35px 80px -15px rgba(0, 0, 0, 0.8), inset 0 1px 2px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL ARCHITECTURAL CANVAS & AMBIENT AURORA BACKDROP
+   -------------------------------------------------------------------------- */
+html, body {
+  background-color: var(--hh-canvas-dark) !important;
+  color: var(--hh-text-primary) !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  scroll-behavior: smooth !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix Elementor wrapper backgrounds */
+.rey-siteContainer,
+.rey-siteContent,
+.elementor,
+.elementor-page,
+.elementor-element {
+  background-color: transparent !important;
+}
+
+/* Atmospheric Ambient Glow Orbs behind all frosted glass */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 12% 15%, rgba(212, 175, 55, 0.12) 0%, transparent 42%),
+    radial-gradient(circle at 88% 35%, rgba(120, 180, 255, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 25% 65%, rgba(230, 160, 70, 0.08) 0%, transparent 48%),
+    radial-gradient(circle at 75% 85%, rgba(30, 130, 100, 0.09) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(20, 25, 38, 0.5) 0%, transparent 100%);
+  animation: hhAmbientPulse 20s ease-in-out infinite alternate;
+}
+
+@keyframes hhAmbientPulse {
+  0% {
+    opacity: 0.85;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translate(15px, -10px);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1) translate(-10px, 15px);
+  }
+}
+
+/* Custom Glass Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  background: #090c12;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  border-radius: 99px;
+  border: 2px solid #090c12;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.45);
+}
+
+/* Instant Page Preloader Killer */
+#rey-site-preloader,
+.rey-sitePreloader {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.site-preloader--active {
+  opacity: 1 !important;
+}
+.site-preloader--active .rey-siteHeader.--preloader-anim,
+.rey-siteHeader.--preloader-anim {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. FLOATING FROSTED GLASS HEADER (DESKTOP & MOBILE)
+   -------------------------------------------------------------------------- */
+.rey-siteHeader {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  background: rgba(9, 12, 18, 0.78) !important;
+  backdrop-filter: var(--hh-blur-lg) !important;
+  -webkit-backdrop-filter: var(--hh-blur-lg) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Hide default Rey theme navigation, hamburger, search and wishlist icons in header */
+.rey-siteHeader .elementor-element-9f42dab,
+.rey-siteHeader .elementor-element-1d015cc,
+.rey-siteHeader .rey-mainNavigation,
+.rey-siteHeader .rey-mainNavigation-mobileBtn,
+.rey-siteHeader .rey-headerIcon,
+.rey-siteHeader .elementor-widget-reycore-header-navigation,
+.rey-siteHeader .elementor-widget-reycore-header-search,
+.rey-siteHeader .elementor-widget-reycore-header-wishlist,
+.rey-siteHeader button:not(.newsletter-submit-btn),
+.rey-siteHeader .rey-header-search,
+.rey-siteHeader .rey-header-wishlist,
+.rey-mobileHeader button {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Header Container */
+.rey-siteHeader .elementor-element-8e65681 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 14px 44px !important;
+  min-height: 86px !important;
+  background: transparent !important;
+  border: none !important;
+  box-sizing: border-box !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+}
+
+/* Logo & Header Elements Layout */
+.rey-siteHeader .elementor-element-53394a6 {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+  margin: 0 !important;
+}
+
+.rey-siteHeader .elementor-element-53394a6 .elementor-widget-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+.rey-siteHeader .rey-logoWrapper,
+.rey-siteHeader .rey-siteLogo,
+.rey-siteHeader .custom-logo-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: transform 0.3s ease !important;
+}
+
+.rey-siteHeader .custom-logo-link:hover {
+  transform: scale(1.03);
+}
+
+/* HUDA HOMES Crisp White Brand Logo (Universal Single-Logo Rule) */
+.custom-logo-link img,
+.rey-siteHeader img.custom-logo,
+.rey-siteHeader img.rey-mobileLogo,
+.rey-mobileNav-header img.custom-logo {
+  display: block !important;
+  width: auto !important;
+  height: 42px !important;
+  max-height: 42px !important;
+  max-width: 175px !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* If a logo container has duplicate sibling images, always hide the extra one */
+.custom-logo-link img ~ img,
+.rey-siteHeader .custom-logo-link img ~ img,
+.rey-mobileNav-header img.rey-mobileLogo {
+  display: none !important;
+}
+
+/* Obsolete WA widget suppression */
+#wa,
+.wa__popup_chat_box,
+.wa__btn_popup,
+.wa__btn_popup_txt {
+  display: none !important;
+}
+
+/* Accessibility Skip Link styling */
+a.skip-link:not(:focus),
+a[href="#content"]:not(:focus) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Header Luxury Glass Status Badge */
+.hh-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: var(--hh-blur-sm);
+  -webkit-backdrop-filter: var(--hh-blur-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e2e8f0;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.hh-header-badge:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  color: var(--hh-gold-light);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.2);
+}
+
+.hh-header-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d4af37;
+  box-shadow: 0 0 8px #d4af37;
+  animation: hhPulseDot 2s infinite;
+}
+
+@keyframes hhPulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+/* Header VIP Concierge Action Button */
+.hh-header-vip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.06));
+  backdrop-filter: var(--hh-blur-sm);
+  -webkit-backdrop-filter: var(--hh-blur-sm);
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: 99px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.hh-header-vip-btn:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.32), rgba(212, 175, 55, 0.14));
+  border-color: rgba(212, 175, 55, 0.8);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+
+.hh-header-vip-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: #25d366;
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE VIEWPORT HEADER PERFECTION (ZERO ALMOST STONE TRACE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .rey-siteHeader .elementor-element-8e65681 {
+    padding: 10px 18px !important;
+    min-height: 66px !important;
+    justify-content: space-between !important;
+  }
+  
+  .custom-logo-link img,
+  .rey-siteHeader img.custom-logo,
+  .rey-siteHeader img.rey-mobileLogo {
+    display: block !important;
+    height: 38px !important;
+    max-height: 38px !important;
+    max-width: 155px !important;
+  }
+
+  .custom-logo-link img ~ img,
+  .rey-siteHeader .custom-logo-link img ~ img {
+    display: none !important;
+  }
+
+  .hh-header-badge {
+    display: none !important;
+  }
+
+  .hh-header-vip-btn {
+    padding: 7px 12px !important;
+    font-size: 0.72rem !important;
+    gap: 5px !important;
+  }
+}
+
+/* Mobile Nav Drawer Glassmorphism */
+.rey-mobileNav {
+  background: rgba(9, 12, 18, 0.94) !important;
+  backdrop-filter: var(--hh-blur-lg) !important;
+  -webkit-backdrop-filter: var(--hh-blur-lg) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.rey-mobileNav-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 16px 20px !important;
+}
+
+.rey-mobileNav-main a {
+  color: #e2e8f0 !important;
+  font-weight: 500 !important;
+  transition: all 0.25s ease !important;
+}
+
+.rey-mobileNav-main a:hover {
+  color: var(--hh-gold-light) !important;
+  padding-left: 6px !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. LUXURY ANNOUNCEMENT TICKER (GLASS STRIP)
+   -------------------------------------------------------------------------- */
+.elementor-element-06a5cf3 {
+  background: rgba(14, 18, 26, 0.7) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: var(--hh-gold-light) !important;
+  font-size: 0.76rem !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  padding: 8px 0 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.elementor-element-06a5cf3 a,
+.elementor-element-06a5cf3 span,
+.elementor-element-06a5cf3 div {
+  color: #e2e8f0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. HERO VIDEO ARCHITECTURAL FRAME & FLOATING GLASS OVERLAYS
+   -------------------------------------------------------------------------- */
+.elementor-element-df29ba8,
+.elementor-element-8e4099d {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Hero Vignette for seamless dark blend */
+.elementor-element-df29ba8::after,
+.elementor-element-8e4099d::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(9, 12, 18, 0.35) 0%,
+    transparent 20%,
+    transparent 70%,
+    rgba(9, 12, 18, 0.85) 95%,
+    var(--hh-canvas-dark) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Floating Glass Overlay on Hero */
+.hh-hero-floating-card {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 90%;
+  max-width: 960px;
+  background: rgba(13, 17, 26, 0.68);
+  backdrop-filter: var(--hh-blur-md);
+  -webkit-backdrop-filter: var(--hh-blur-md);
+  border: var(--hh-glass-border);
+  border-top: var(--hh-glass-border-light);
+  border-radius: 24px;
+  padding: 18px 28px;
+  box-shadow: var(--hh-glass-shadow-deep);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+
+.hh-hero-floating-card:hover {
+  background: rgba(16, 22, 34, 0.78);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.hh-hero-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hh-hero-card-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hh-gold);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hh-hero-card-title {
+  font-family: 'Cinzel', serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.05em !important;
+  margin: 0 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.hh-hero-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hh-hero-pill {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 99px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hh-hero-pill:hover {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: rgba(212, 175, 55, 0.5);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .hh-hero-floating-card {
+    bottom: 24px;
+    padding: 14px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .hh-hero-card-title {
+    font-size: 0.95rem;
+  }
+  .hh-hero-pills-row {
+    gap: 6px;
+  }
+  .hh-hero-pill {
+    padding: 4px 10px;
+    font-size: 0.68rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. CATEGORY CAROUSEL & BROOKLYN CARDS (SUSPENDED GLASS PEDESTALS)
+   -------------------------------------------------------------------------- */
+.elementor-element-f87fdc1 {
+  padding: 60px 0 !important;
+}
+
+/* Outer Card Container */
+.rey-card.--brooklyn {
+  position: relative !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: var(--hh-glass-border) !important;
+  border-top: var(--hh-glass-border-light) !important;
+  box-shadow: var(--hh-glass-shadow) !important;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.rey-card.--brooklyn:hover {
+  transform: translateY(-9px) scale(1.018) !important;
+  border-color: rgba(212, 175, 55, 0.45) !important;
+  box-shadow: var(--hh-glass-shadow-hover) !important;
+}
+
+/* Smooth Image Scale */
+.rey-card.--brooklyn img.__media {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease !important;
+  filter: brightness(0.92) contrast(1.05) !important;
+}
+
+.rey-card.--brooklyn:hover img.__media {
+  transform: scale(1.07) !important;
+  filter: brightness(1) contrast(1.08) !important;
+}
+
+/* Glass Floating Overlay Card for Captions */
+.rey-card.--brooklyn .__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(9, 12, 18, 0.85) 0%,
+    rgba(9, 12, 18, 0.3) 40%,
+    transparent 100%
+  ) !important;
+}
+
+/* Category Title converted to Frosted Glass Plinth */
+.rey-card.--brooklyn .__captionTitle {
+  font-family: 'Cinzel', 'Outfit', serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  color: #ffffff !important;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rey-card.--brooklyn:hover .__captionTitle {
+  color: var(--hh-gold-light) !important;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.45) !important;
+}
+
+/* "Click here" converted to Frosted Pill Button */
+.rey-card.--brooklyn .btn.btn-dash-line {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 24px !important;
+  background: rgba(14, 19, 29, 0.75) !important;
+  backdrop-filter: var(--hh-blur-md) !important;
+  -webkit-backdrop-filter: var(--hh-blur-md) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 99px !important;
+  color: #fff !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.35s ease !important;
+}
+
+.rey-card.--brooklyn:hover .btn.btn-dash-line {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.12)) !important;
+  border-color: rgba(212, 175, 55, 0.75) !important;
+  color: #fff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. SECTION HEADINGS & ARCHITECTURAL DIVIDERS
+   -------------------------------------------------------------------------- */
+.elementor-heading-title {
+  font-family: 'Cinzel', 'Playfair Display', serif !important;
+  color: #ffffff !important;
+  letter-spacing: 0.05em !important;
+  background: linear-gradient(135deg, #ffffff 40%, #d4af37 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Luminous Glass Beam Dividers */
+.elementor-divider-separator {
+  height: 1px !important;
+  border: none !important;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent) !important;
+  margin: 18px auto !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. PRODUCT CARDS & CAROUSELS (FROSTED CRYSTAL PLINTHS)
+   -------------------------------------------------------------------------- */
+ul.products li.product {
+  background: transparent !important;
+  border: none !important;
+}
+
+.rey-productInner,
+li.product .rey-productInner {
+  background: var(--hh-glass-bg-card) !important;
+  backdrop-filter: var(--hh-blur-md) !important;
+  -webkit-backdrop-filter: var(--hh-blur-md) !important;
+  border: var(--hh-glass-border) !important;
+  border-top: var(--hh-glass-border-light) !important;
+  border-radius: 22px !important;
+  padding: 16px !important;
+  box-shadow: var(--hh-glass-shadow) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+}
+
+.rey-productInner:hover,
+li.product:hover .rey-productInner {
+  transform: translateY(-8px) !important;
+  border-color: rgba(212, 175, 55, 0.42) !important;
+  box-shadow: var(--hh-glass-shadow-hover) !important;
+  background: rgba(24, 31, 47, 0.78) !important;
+}
+
+/* Thumbnail wrapper */
+.rey-productThumbnail {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  position: relative !important;
+}
+
+.rey-productThumbnail img {
+  border-radius: 16px !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.rey-productInner:hover .rey-productThumbnail img {
+  transform: scale(1.06) !important;
+}
+
+/* "New" Badge transformed into Golden Jewel Tag */
+.rey-itemBadge.rey-new-badge {
+  background: rgba(212, 175, 55, 0.22) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(212, 175, 55, 0.48) !important;
+  color: #fceea8 !important;
+  border-radius: 99px !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 5px 14px !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Product Loop Title */
+.woocommerce-loop-product__title,
+.woocommerce-loop-product__title a {
+  font-family: 'Cinzel', serif !important;
+  color: #f1f5f9 !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  margin-top: 14px !important;
+  transition: color 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.woocommerce-loop-product__title a:hover {
+  color: var(--hh-gold-light) !important;
+}
+
+/* Action Button ("Read more") converted to Frosted Pill */
+.rey-btn--primary,
+.button.rey-btn--primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 22px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 99px !important;
+  color: #ffffff !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rey-btn--primary:hover,
+.button.rey-btn--primary:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.1)) !important;
+  border-color: rgba(212, 175, 55, 0.7) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Carousel Arrow Nav Buttons */
+.rey-arrowSvg {
+  background: rgba(18, 24, 36, 0.75) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rey-arrowSvg:hover {
+  background: rgba(212, 175, 55, 0.25) !important;
+  border-color: rgba(212, 175, 55, 0.6) !important;
+  color: var(--hh-gold-light) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. LIVING HERITAGE SPOTLIGHT MASTERWORK SECTION
+   -------------------------------------------------------------------------- */
+.heritage-spotlight {
+  padding: 80px 24px !important;
+  background: transparent !important;
+}
+
+.heritage-container {
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  background: rgba(14, 19, 29, 0.76) !important;
+  backdrop-filter: var(--hh-blur-lg) !important;
+  -webkit-backdrop-filter: var(--hh-blur-lg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 32px !important;
+  box-shadow: var(--hh-glass-shadow-deep) !important;
+  padding: 56px 48px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 50px !important;
+  transition: all 0.45s ease !important;
+}
+
+.heritage-container:hover {
+  border-color: rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.18) !important;
+}
+
+.heritage-text-column {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  flex: 1 1 50% !important;
+}
+
+.heritage-content-card {
+  max-width: 100% !important;
+}
+
+.heritage-visual-column {
+  border: none !important;
+  flex: 1 1 50% !important;
+}
+
+.heritage-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 16px !important;
+  background: rgba(212, 175, 55, 0.15) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border-radius: 99px !important;
+  color: var(--hh-gold-light) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 16px !important;
+}
+
+.heritage-title {
+  font-family: 'Cinzel', serif !important;
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  line-height: 1.15 !important;
+  margin-bottom: 20px !important;
+}
+
+.heritage-title em {
+  font-style: italic !important;
+  background: var(--hh-gold-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.heritage-desc {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  color: #cbd5e1 !important;
+  margin-bottom: 32px !important;
+}
+
+.heritage-premium-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 14px 34px !important;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.28), rgba(212, 175, 55, 0.1)) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(212, 175, 55, 0.5) !important;
+  border-radius: 99px !important;
+  color: #ffffff !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
+  transition: all 0.35s ease !important;
+}
+
+.heritage-premium-btn:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.45), rgba(212, 175, 55, 0.2)) !important;
+  border-color: rgba(212, 175, 55, 0.9) !important;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Heritage Image Frame */
+.heritage-image-wrapper {
+  position: relative !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7) !important;
+}
+
+.heritage-image-wrapper img {
+  border-radius: 24px !important;
+  width: 100% !important;
+  display: block !important;
+  transition: transform 0.7s ease !important;
+}
+
+.heritage-image-wrapper:hover img {
+  transform: scale(1.04) !important;
+}
+
+@media (max-width: 900px) {
+  .heritage-container {
+    flex-direction: column !important;
+    padding: 36px 24px !important;
+    gap: 30px !important;
+  }
+  .heritage-title {
+    font-size: 2.2rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. SITE FOOTER (DEEP OBSIDIAN FROSTED GLASS)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: rgba(7, 10, 15, 0.95) !important;
+  backdrop-filter: var(--hh-blur-lg) !important;
+  -webkit-backdrop-filter: var(--hh-blur-lg) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  padding: 70px 24px 40px !important;
+  position: relative !important;
+}
+
+/* Golden light rim at top of footer */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.footer-inner-container {
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+}
+
+.footer-logo-img {
+  max-height: 44px !important;
+  width: auto !important;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6)) !important;
+}
+
+.footer-tagline {
+  color: var(--hh-gold) !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  margin-top: 10px !important;
+}
+
+.footer-contact-snippets p {
+  color: #94a3b8 !important;
+  font-size: 0.9rem !important;
+}
+
+.footer-contact-snippets strong {
+  color: #fff !important;
+}
+
+.footer-contact-snippets a {
+  color: #25d366 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+
+.footer-column-heading {
+  font-family: 'Cinzel', serif !important;
+  font-size: 1.1rem !important;
+  color: #ffffff !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 20px !important;
+}
+
+.footer-navigation-list a {
+  color: #94a3b8 !important;
+  font-size: 0.92rem !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.footer-navigation-list a:hover {
+  color: var(--hh-gold-light) !important;
+  padding-left: 6px !important;
+}
+
+/* Glass Social Buttons */
+.footer-social-row a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.footer-social-row a:hover {
+  background: rgba(212, 175, 55, 0.25) !important;
+  border-color: rgba(212, 175, 55, 0.6) !important;
+  color: var(--hh-gold-light) !important;
+  transform: translateY(-3px) scale(1.08) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35) !important;
+}
+
+/* Frosted Glass Newsletter Field */
+.footer-newsletter-form input {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 99px !important;
+  color: #fff !important;
+  padding: 12px 20px !important;
+  outline: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-newsletter-form input:focus {
+  border-color: var(--hh-gold) !important;
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.3) !important;
+}
+
+.newsletter-submit-btn {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.15)) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  -webkit-backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(212, 175, 55, 0.5) !important;
+  border-radius: 99px !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  padding: 10px 22px !important;
+  transition: all 0.3s ease !important;
+}
+
+.newsletter-submit-btn:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0.25)) !important;
+  border-color: rgba(212, 175, 55, 0.9) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. FLOATING VIP WHATSAPP GLASS CONCIERGE PILL (FIXED BOTTOM-RIGHT)
+   -------------------------------------------------------------------------- */
+.hh-floating-concierge {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: rgba(12, 18, 14, 0.84);
+  backdrop-filter: var(--hh-blur-md);
+  -webkit-backdrop-filter: var(--hh-blur-md);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  border-top: 1px solid rgba(37, 211, 102, 0.55);
+  border-radius: 99px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(37, 211, 102, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hh-floating-concierge:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: rgba(16, 26, 20, 0.92);
+  border-color: rgba(37, 211, 102, 0.8);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(37, 211, 102, 0.35);
+  color: #ffffff;
+}
+
+.hh-concierge-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
+}
+
+.hh-concierge-icon svg {
+  width: 17px;
+  height: 17px;
+  fill: #fff;
+}
+
+.hh-concierge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hh-concierge-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #86efac;
+  font-weight: 600;
+}
+
+.hh-concierge-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 767px) {
+  .hh-floating-concierge {
+    bottom: 18px;
+    right: 18px;
+    padding: 8px 14px;
+    gap: 8px;
+  }
+  .hh-concierge-title {
+    font-size: 0.76rem;
+  }
+}
+
+/* ==========================================================================
+   12. SINGLE PRODUCT DETAIL PAGES (FROSTED GLASS SHOWROOM)
+   ========================================================================== */
+.single-product .rey-siteContainer,
+.single-product .site-main,
+.single-product .product {
+  background: transparent !important;
+  color: var(--hh-text-primary) !important;
+}
+
+/* Frosted Glass Product Summary Plinth */
+.single-product .summary.entry-summary,
+.single-product .rey-innerSummary {
+  background: var(--hh-glass-bg-card) !important;
+  backdrop-filter: var(--hh-blur-lg) !important;
+  -webkit-backdrop-filter: var(--hh-blur-lg) !important;
+  border: var(--hh-glass-border) !important;
+  border-top: var(--hh-glass-border-light) !important;
+  border-radius: 28px !important;
+  padding: 38px 40px !important;
+  box-shadow: var(--hh-glass-shadow-deep) !important;
+}
+
+.single-product h1.product_title {
+  font-family: 'Cinzel', serif !important;
+  font-size: clamp(2rem, 3.5vw, 2.8rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff 40%, #d4af37 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  margin-bottom: 16px !important;
+  line-height: 1.2 !important;
+}
+
+.single-product .price,
+.single-product .price span {
+  font-family: 'Outfit', sans-serif !important;
+  color: var(--hh-gold-light) !important;
+  font-size: 1.45rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.single-product .woocommerce-product-details__short-description {
+  color: var(--hh-text-secondary) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  margin: 22px 0 !important;
+}
+
+/* Gallery Glass Presentation */
+.single-product .woocommerce-product-gallery {
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  background: var(--hh-glass-bg-subtle) !important;
+  padding: 12px !important;
+  border: var(--hh-glass-border) !important;
+}
+
+.single-product .woocommerce-product-gallery img {
+  border-radius: 20px !important;
+  box-shadow: var(--hh-glass-shadow) !important;
+  transition: transform 0.6s ease !important;
+}
+
+.single-product .woocommerce-product-gallery img:hover {
+  transform: scale(1.02);
+}
+
+/* Breadcrumbs in Showroom */
+.rey-breadcrumbs,
+.woocommerce-breadcrumb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #94a3b8 !important;
+  margin-bottom: 24px !important;
+}
+
+.rey-breadcrumbs a,
+.woocommerce-breadcrumb a {
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  transition: color 0.25s ease !important;
+}
+
+.rey-breadcrumbs a:hover,
+.woocommerce-breadcrumb a:hover {
+  color: var(--hh-gold-light) !important;
+}
+
+.rey-breadcrumbs-del {
+  color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.rey-breadcrumbs-item:last-child {
+  color: var(--hh-gold) !important;
+  font-weight: 600 !important;
+}
+
+/* Inquire / Consultation Button */
+.single-product .single_add_to_cart_button,
+.single-product .button.rey-btn--primary,
+.single-product .cart button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 16px 36px !important;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.12)) !important;
+  backdrop-filter: var(--hh-blur-md) !important;
+  -webkit-backdrop-filter: var(--hh-blur-md) !important;
+  border: 1px solid rgba(212, 175, 55, 0.6) !important;
+  border-radius: 99px !important;
+  color: #ffffff !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.35) !important;
+  transition: all 0.35s ease !important;
+}
+
+.single-product .single_add_to_cart_button:hover,
+.single-product .button.rey-btn--primary:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0.25)) !important;
+  border-color: rgba(212, 175, 55, 0.95) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 16px 35px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Tabs & Panels */
+.single-product .woocommerce-tabs {
+  margin-top: 50px !important;
+}
+
+.single-product .woocommerce-tabs ul.tabs {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  display: flex !important;
+  gap: 16px !important;
+  padding: 0 !important;
+}
+
+.single-product .woocommerce-tabs ul.tabs li {
+  background: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: var(--hh-blur-sm) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-bottom: none !important;
+  border-radius: 14px 14px 0 0 !important;
+  padding: 12px 24px !important;
+}
+
+.single-product .woocommerce-tabs ul.tabs li.active {
+  background: rgba(212, 175, 55, 0.15) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+.single-product .woocommerce-tabs ul.tabs li a {
+  color: #fff !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+.single-product .woocommerce-tabs .panel {
+  background: var(--hh-glass-bg-card) !important;
+  backdrop-filter: var(--hh-blur-md) !important;
+  border: var(--hh-glass-border) !important;
+  border-radius: 0 0 24px 24px !important;
+  padding: 36px !important;
+  color: var(--hh-text-secondary) !important;
+  line-height: 1.8 !important;
+}
+
+/* ==========================================================================
+   13. PRODUCT CATEGORY ARCHIVE PAGES (FROSTED GLASS GALLERIES)
+   ========================================================================== */
+.tax-product_cat .rey-siteContainer,
+.post-type-archive-product .rey-siteContainer {
+  background: transparent !important;
+}
+
+.woocommerce-products-header {
+  padding: 55px 20px 35px !important;
+  text-align: center !important;
+}
+
+.woocommerce-products-header__title.page-title,
+.rey-archiveHeader-title {
+  font-family: 'Cinzel', serif !important;
+  font-size: clamp(2.4rem, 4vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  background: linear-gradient(135deg, #ffffff 40%, #d4af37 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  margin-bottom: 16px !important;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6) !important;
+}
+
+.term-description,
+.term-description p {
+  color: var(--hh-text-secondary) !important;
+  font-size: 1.05rem !important;
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  line-height: 1.7 !important;
+}
+
+/* Filter & Ordering Glass Pills */
+.rey-filterBtn,
+.woocommerce-ordering select {
+  background: rgba(18, 24, 36, 0.85) !important;
+  backdrop-filter: var(--hh-blur-md) !important;
+  -webkit-backdrop-filter: var(--hh-blur-md) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 99px !important;
+  color: #fff !important;
+  padding: 9px 20px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+.woocommerce-result-count {
+  color: #94a3b8 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.05em !important;
+}
